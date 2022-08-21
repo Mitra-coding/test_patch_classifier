@@ -27,9 +27,9 @@ info_training:
   export_mode : 'max'
 
 data_sequence:
-  train_csv_file : '../data/train.csv'
-  validation_csv_file : '../data/validation.csv'
-  test_csv_file : '../data/test.csv'
+  train_csv_file : '/content/repo_/data/train.csv'
+  validation_csv_file : '/content/repo_/data/validation.csv'
+  test_csv_file : '/content/repo_/data/test.csv'
   x_names : 'imgfile'
   cc_names: ''
   mlo_names: ''

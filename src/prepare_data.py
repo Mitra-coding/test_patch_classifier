@@ -10,17 +10,16 @@ from omegaconf import OmegaConf
 
 
 @click.command()
-@click.argument('path_to_data', type=str, default='')
-@click.argument('path_to_labels', type=str, default='')
+@click.argument('path_to_data', type=str, default='/content/drive/MyDrive/Breast Cancer Preprocessed Datasets/CBIS-Patches.zip')
+@click.argument('path_to_labels', type=str, default='/content/drive/MyDrive/Breast Cancer Preprocessed Datasets/cbis-patch-labels.csv')
 @click.argument('test_size', type=float, default=0.3)
 def main(path_to_data: str, path_to_labels: str, test_size: float):
-    config_file_path = Path('../config.yaml')
+    config_file_path = Path('/content/repo_/config.yaml')
     config = OmegaConf.load(config_file_path)
 
-    path_to_data =
     random_seed = config.general_info.random_seed
     class_names = config.general_info.classes
-    data_dir = '../data/'+path_to_data.split('/')[-1].split('.')[0]
+    data_dir = '/content/repo_/data/'+path_to_data.split('/')[-1].split('.')[0]
     train_csv_file = config.data_sequence.train_csv_file
     validation_csv_file = config.data_sequence.validation_csv_file
     test_csv_file = config.data_sequence.test_csv_file
@@ -54,7 +53,7 @@ def main(path_to_data: str, path_to_labels: str, test_size: float):
         abn = ast.literal_eval(df_i['PatchFolder_abn'])
         img = []
         for j in range(len(abn)):
-            img.extend(glob.glob('../data/' + abn[j] + '*.jpg'))
+            img.extend(glob.glob('/content/repo_/data/' + abn[j] + '*.jpg'))
         label = [label_dict[df_i['Label'].split(' ')[0]] for _ in range(len(img))]
         train_imgs.extend(img)
         train_labels.extend(label)
@@ -62,7 +61,7 @@ def main(path_to_data: str, path_to_labels: str, test_size: float):
         bck = ast.literal_eval(df_i['PatchFolder_bck'])
         img = []
         for j in range(len(bck)):
-            img.extend(glob.glob('../data/' + bck[j] + '*.jpg'))
+            img.extend(glob.glob('/content/repo_/data/' + bck[j] + '*.jpg'))
         label = [label_dict['background'] for _ in range(len(img))]
 
         train_imgs.extend(img)
@@ -80,7 +79,7 @@ def main(path_to_data: str, path_to_labels: str, test_size: float):
         abn = ast.literal_eval(df_i['PatchFolder_abn'])
         img = []
         for j in range(len(abn)):
-            img.extend(glob.glob('../data/' + abn[j] + '*.jpg'))
+            img.extend(glob.glob('/content/repo_/data/' + abn[j] + '*.jpg'))
         label = [label_dict[df_i['Label'].split(' ')[0]] for _ in range(len(img))]
         val_imgs.extend(img)
         val_labels.extend(label)
@@ -88,7 +87,7 @@ def main(path_to_data: str, path_to_labels: str, test_size: float):
         bck = ast.literal_eval(df_i['PatchFolder_bck'])
         img = []
         for j in range(len(bck)):
-            img.extend(glob.glob('../data/' + bck[j] + '*.jpg'))
+            img.extend(glob.glob('/content/repo_/data/' + bck[j] + '*.jpg'))
         label = [label_dict['background'] for _ in range(len(img))]
 
         val_imgs.extend(img)
@@ -112,7 +111,7 @@ def main(path_to_data: str, path_to_labels: str, test_size: float):
         abn = ast.literal_eval(df_i['PatchFolder_abn'])
         img = []
         for j in range(len(abn)):
-            img.extend(glob.glob('../data/' + abn[j] + '*.jpg'))
+            img.extend(glob.glob('/content/repo_/data/' + abn[j] + '*.jpg'))
         label = [label_dict[df_i['Label'].split(' ')[0]] for _ in range(len(img))]
         test_imgs.extend(img)
         test_labels.extend(label)
@@ -120,7 +119,7 @@ def main(path_to_data: str, path_to_labels: str, test_size: float):
         bck = ast.literal_eval(df_i['PatchFolder_bck'])
         img = []
         for j in range(len(bck)):
-            img.extend(glob.glob('../data/' + bck[j] + '*.jpg'))
+            img.extend(glob.glob('/content/repo_/data/' + bck[j] + '*.jpg'))
         label = [label_dict['background'] for _ in range(len(img))]
 
         test_imgs.extend(img)
