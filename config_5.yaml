@@ -5,7 +5,7 @@ general_info:
   image_source_dir_train : ''
   image_source_dir_val : ''
   image_source_dir_test : ''
-  best_weights_path : '/content/drive/MyDrive/BR-Runs/Run7/run/checkpoints'
+  best_weights_path : '/content/drive/MyDrive/BR-Runs-New/Run2/run/checkpoints'
   activation : 'softmax'
   image_height : 256
   image_width : 256
@@ -18,8 +18,8 @@ general_info:
   three_phase_training: False
 
 info_training:
-  run : '/content/repo_/BR-Runs/Run8_5_class/run'
-  export: '/content/repo_/BR-Runs/Run8_5_class/export'
+  run : '/content/repo_/BR-Runs-New/Run2/run'
+  export: '/content/repo_/BR-Runs-New/Run2/export'
   epochs : 20
   initial_learning_rate: 1e-4
   loss : 'categorical_crossentropy'
@@ -27,9 +27,9 @@ info_training:
   export_mode : 'max'
 
 data_sequence:
-  train_csv_file : '/content/repo_/data/train.csv'
-  validation_csv_file : '/content/repo_/data/validation.csv'
-  test_csv_file : '/content/repo_/data/test.csv'
+  train_csv_file : '/content/repo_/data_5/train.csv'
+  validation_csv_file : '/content/repo__5/data/validation.csv'
+  test_csv_file : '/content/repo_/data_5/test.csv'
   x_names : 'imgfile'
   cc_names: ''
   mlo_names: ''
