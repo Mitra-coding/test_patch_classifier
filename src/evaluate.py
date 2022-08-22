@@ -17,7 +17,7 @@ from evaluation import Evaluator
 
 
 def main():
-    config_file_path = Path('../config.yaml')
+    config_file_path = Path('/content/repo_/config.yaml')
     config = OmegaConf.load(config_file_path)
     evaluator = Evaluator(config)
 
