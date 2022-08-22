@@ -44,15 +44,14 @@ def main():
                   callbacks=callbacks,
                   active_run=active_run)
 
-    # active_run = setup_mlflow_active_run(config_path=config_file_path,
-    #                                      session_type='export'
-    #                                      )
-    #
-    # pyfuncmodel = PatchModel()
-    # exporter = Exporter(config, run_dir)
-    # exporter.log_model_to_mlflow(active_run=active_run,
-    #                              pyfunc_model=pyfuncmodel,
-    #                              config_path=config_file_path)
+    active_run = setup_mlflow_active_run(config_path=config_file_path,
+                                         session_type='export'
+                                         )
+    pyfuncmodel = PatchModel()
+    exporter = Exporter(config, run_dir)
+    exporter.log_model_to_mlflow(active_run=active_run,
+                                  pyfunc_model=pyfuncmodel,
+                                 config_path=config_file_path)
 
 
 if __name__ == '__main__':
