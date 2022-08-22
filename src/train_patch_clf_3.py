@@ -18,7 +18,7 @@ from training import Trainer, Exporter
 
 
 def main():
-    config_file_path = Path('/content/repo_/config.yaml')
+    config_file_path = Path('/content/repo_/config_patch_clf_3.yaml')
     config = OmegaConf.load(config_file_path)
     run_dir = Path(config.info_training.run)
     exported_dir = Path(config.info_training.export)
