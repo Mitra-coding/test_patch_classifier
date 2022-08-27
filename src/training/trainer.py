@@ -153,7 +153,7 @@ class Trainer(TrainerBase):
         exporter = Exporter(self.config, self.run_dir)
         exporter.log_model_to_mlflow(active_run,
                                      pyfuncmodel,
-                                     Path('/content/repo_/config.yaml')
+                                     Path('/content/repo_/config_5.yaml')
                                      )
 
     def _write_mlflow_run_id(self, run: mlflow.ActiveRun):
