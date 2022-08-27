@@ -59,7 +59,7 @@ class Evaluator:
             y_truth_arg = np.argmax(y_truth, axis=1)
 
 	    print('\n\n')
-            print('y_truth_arg ', y_truth_arg )
+            print('y_truth ', y_truth )
 
             self.y_truth = y_truth
             self.predictions = predictions
