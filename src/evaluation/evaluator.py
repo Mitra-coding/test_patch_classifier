@@ -52,8 +52,14 @@ class Evaluator:
             predictions = model.predict(test_data_gen, verbose=1)
             y_truth = test_data_gen.get_y_true()
             predictions_arg = np.argmax(predictions, axis=1)
+
+	    print('predictions_arg' , predictions_arg )
+
             y_pred_multi = np.eye((len(self.class_names)))[predictions_arg]
             y_truth_arg = np.argmax(y_truth, axis=1)
+
+	    print('\n\n')
+            print('y_truth_arg ', y_truth_arg )
 
             self.y_truth = y_truth
             self.predictions = predictions
