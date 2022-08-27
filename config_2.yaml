@@ -62,7 +62,7 @@ evaluation:
   auc_curves : True
   wrong_prediction : "positive"
   explainability : True
-  eval_saving_path : '/content/drive/MyDrive/BR-Runs/Run3/evaluation.csv'
-  saving_dir : '/content/drive/MyDrive/BR-Runs/Run3'
+  eval_saving_path : '/content/drive/MyDrive/Breast_Cancer_Experiments/BR-Runs/Run3/evaluation.csv'
+  saving_dir : '/content/drive/MyDrive/Breast_Cancer_Experiments/BR-Runs/Run3'
 
 
