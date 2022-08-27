@@ -101,6 +101,8 @@ def main(path_to_data: str, path_to_labels: str, test_size: float):
     test_df['imgfile'] = test_imgs
     test_df[columns[1:]] = test_labels
 
+    test_df[:500] = test_df
+
     train_df.to_csv(train_csv_file, index=False)
     val_df.to_csv(validation_csv_file, index=False)
     test_df.to_csv(test_csv_file, index=False)
