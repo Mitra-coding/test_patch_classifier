@@ -51,6 +51,7 @@ class DataLoader(DataLoaderBase):
         self.train_batch_size = self.config.general_info.train_batch_size
         self.valid_batch_size = self.config.general_info.val_batch_size
         self.test_batch_size = self.config.general_info.test_batch_size
+        self.patch_training = self.config.general_info.patch_training
 
     def create_training_generator(self) -> typing.Tuple[typing.Iterator, int]:
 
@@ -123,11 +124,9 @@ class DataLoader(DataLoaderBase):
         """
         class_weights = {}
 
-        if len(self.class_names) > 1:
-            for i in range(len(self.class_names)):
-                class_weights[i] = 1 - len(self.train_df.loc[self.train_df[self.class_names[i]] == 1]) / len(self.train_df)
-        else:
-            class_weights[0] = 1 - len(self.train_df.loc[self.train_df[self.class_names[0]] == 1]) / len(self.train_df)
+        for i in range(len(self.class_names)):
+            class_weights[i] = 1 - len(self.train_df.loc[self.train_df[self.class_names[i]] == 1]) / len(self.train_df)
+
         return class_weights
 
     def create_validation_generator(self):
