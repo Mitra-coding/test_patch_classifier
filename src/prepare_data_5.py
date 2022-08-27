@@ -130,9 +130,9 @@ def main(path_to_data: str, path_to_labels: str, test_size: float):
     test_df[columns[1:]] = test_labels
 
 
-    val_df = val_df[:100]
-    test_df = test_df[:500]
-    train_df = train_df[:300]
+    val_df = val_df[:1000]
+    test_df = test_df[:5000]
+    train_df = train_df[:800]
 
     train_df.to_csv(train_csv_file, index=False)
     val_df.to_csv(validation_csv_file, index=False)
