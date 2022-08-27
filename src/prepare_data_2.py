@@ -14,7 +14,7 @@ from omegaconf import OmegaConf
 @click.argument('path_to_labels', type=str, default='/content/drive/MyDrive/Breast Cancer Preprocessed Datasets/cbis-patch-labels.csv')
 @click.argument('test_size', type=float, default=0.3)
 def main(path_to_data: str, path_to_labels: str, test_size: float):
-    config_file_path = Path('/content/repo_/config.yaml')
+    config_file_path = Path('/content/repo_/config_2.yaml')
     config = OmegaConf.load(config_file_path)
 
     random_seed = config.general_info.random_seed
