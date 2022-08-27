@@ -18,7 +18,7 @@ from training import Trainer, Exporter
 
 
 def main():
-    config_file_path = Path('/content/repo_/config.yaml')
+    config_file_path = Path('../config.yaml')
     config = OmegaConf.load(config_file_path)
     run_dir = Path(config.info_training.run)
     exported_dir = Path(config.info_training.export)
@@ -44,14 +44,15 @@ def main():
                   callbacks=callbacks,
                   active_run=active_run)
 
-    active_run = setup_mlflow_active_run(config_path=config_file_path,
-                                         session_type='export'
-                                         )
-    pyfuncmodel = PatchModel()
-    exporter = Exporter(config, run_dir)
-    exporter.log_model_to_mlflow(active_run=active_run,
-                                  pyfunc_model=pyfuncmodel,
-                                 config_path=config_file_path)
+    # active_run = setup_mlflow_active_run(config_path=config_file_path,
+    #                                      session_type='export'
+    #                                      )
+    #
+    # pyfuncmodel = PatchModel()
+    # exporter = Exporter(config, run_dir)
+    # exporter.log_model_to_mlflow(active_run=active_run,
+    #                              pyfunc_model=pyfuncmodel,
+    #                              config_path=config_file_path)
 
 
 if __name__ == '__main__':
