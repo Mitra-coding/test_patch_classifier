@@ -131,7 +131,7 @@ def main(path_to_data: str, path_to_labels: str, test_size: float):
 
 
    # val_df = val_df[:1000]
-    test_df = test_df[:500]
+    #test_df = test_df[:500]
   #  train_df = train_df[:800]
 
     train_df.to_csv(train_csv_file, index=False)
