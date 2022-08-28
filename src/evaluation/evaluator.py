@@ -10,7 +10,7 @@ from sklearn import metrics
 from prettytable import PrettyTable
 import mlflow
 import typing
-from model_factory import PatchModel
+#from model_factory import PatchModel
 from training import Exporter
 
 
