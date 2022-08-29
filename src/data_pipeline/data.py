@@ -107,6 +107,8 @@ class ImageSequenceMultiView(Sequence):
         batch_x = [batch_cc, batch_mlo]
         batch_x = self.transform_batch_images(batch_x)
 
+        a = batch_x[0]
+
         return batch_x, batch_y
 
     def load_image(self, image_file):
@@ -115,10 +117,16 @@ class ImageSequenceMultiView(Sequence):
         image = cv2.resize(image, (self.W, self.H))
         if self.synthesize_3_channel:
             image_array = self.synthesize(image)
+            print('synth')
         else:
             clahe = cv2.createCLAHE(clipLimit=2, tileGridSize=(5, 5))
             image = clahe.apply(np.array(image, dtype=np.uint8))
             image = (image - image.min()) / (image.max() - image.min())
+
+            print('maxxxxxx', image.max)
+            print('minnnnnn', image.min)
+            print('\n\n')
+
             image = np.expand_dims(image, axis=-1)
             image_array = np.concatenate([image, image, image], axis=-1)
         return image_array
@@ -196,7 +204,7 @@ class ImageSequenceSingleView(Sequence):
                  target_size_w: int = 224,
                  synthesize: bool = False,
                  augmenter: typing.Optional[Augmentation] = None,
-                 verbose: bool = False,
+                 verbose: bool = True
                  steps: int = None,
                  shuffle_on_epoch_end: bool = True,
                  random_state: int = 1
@@ -338,6 +346,9 @@ class ImageSequenceSingleView(Sequence):
 
     def visualize(self):
         img, label = self.__getitem__(10)
+	print('maxxx',img.max)
+	print('minnn',img.min)
+	print('\n\n)
 
         plt.figure(figsize=(6, 3))
         plt.subplot(1, 2, 1)
