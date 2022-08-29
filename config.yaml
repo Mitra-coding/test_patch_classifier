@@ -13,7 +13,7 @@ general_info:
   train_batch_size : 4
   val_batch_size : 4
   test_batch_size : 4
-  patch_model_weight: '/content/drive/MyDrive/Breast_Cancer_Experiments/BR-Runs_patch_to_whole/Run1/run/checkpoints'
+  patch_model_weight: '/content/drive/MyDrive/Breast_Cancer_Experiments/BR-Runs-New/Run_5_1/run/checkpoints'
   patch_training: False
   three_phase_training: False
 
