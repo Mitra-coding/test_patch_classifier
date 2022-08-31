@@ -8,7 +8,7 @@ general_info:
   best_weights_path : ''
   activation : 'softmax'
   image_height : 1024
-  image_width : 768
+  image_width : 1024
   image_channels: 3
   train_batch_size : 4
   val_batch_size : 4
