@@ -33,12 +33,22 @@ def main():
     class_weight = data_loader.get_class_weight()
     active_run = setup_mlflow_active_run(config_path=config_file_path,
                                          session_type='train')
-
+    '''
     trainer.train(model=compiled_model,
                   train_data_gen=train_data_gen,
                   n_iter_train=n_iter_train//40,
                   val_data_gen=val_data_gen,
                   n_iter_val=n_iter_val//40,
+                  class_weight=class_weight,
+                  callbacks=callbacks,
+                  active_run=active_run)
+    '''
+
+    trainer.train(model=compiled_model,
+                  train_data_gen=train_data_gen,
+                  n_iter_train=n_iter_train,
+                  val_data_gen=val_data_gen,
+                  n_iter_val=n_iter_val,
                   class_weight=class_weight,
                   callbacks=callbacks,
                   active_run=active_run)
