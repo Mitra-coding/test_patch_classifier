@@ -18,7 +18,7 @@ def setup_mlflow_active_run(config_path: Path,
         experiment_name = root + '/' + repo.active_branch.name
     except:
         print('Not a Git Repository')
-        experiment_name = 'breast-cancer-experiments/patch-classifier'
+        experiment_name = 'breast-cancer-experiments/image-classifier'
 
     mlflow.end_run()
     active_run = _setup_mlflow(mlflow_experiment_name=experiment_name)
