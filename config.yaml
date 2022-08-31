@@ -6,6 +6,8 @@ general_info:
   image_source_dir_val : '../data/'
   image_source_dir_test : '../data/'
   best_weights_path : ''
+# best_weights_path : '/content/drive/MyDrive/Breast_Cancer_Experiments/BR-Runs-New/Run_5_1/run/checkpoints/whole-image-classifier-benign-malignant'
+
   activation : 'softmax'
   image_height : 1024
   image_width : 768
